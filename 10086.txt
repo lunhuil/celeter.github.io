@@ -1,0 +1,43 @@
+[{
+  "bookSourceComment": "六月",
+  "bookSourceName": "🔥笔趣屋",
+  "bookSourceType": 0,
+  "bookSourceUrl": "http://api.ywpxg.com",
+  "customOrder": -38456,
+  "enabled": true,
+  "enabledExplore": true,
+  "header": "",
+  "lastUpdateTime": 1611572268713,
+  "ruleBookInfo": {
+    "author": "author",
+    "coverUrl": "picture",
+    "init": "<js>\nlet path=java.put('path',java.unzipFile(java.downloadFile(result,baseUrl)));\nJSON.parse(Packages.java.lang.String(java.readFile(path+'/detail.json'))).data\n</js>",
+    "intro": "intro",
+    "kind": "category",
+    "lastChapter": "chapterName",
+    "name": "name",
+    "wordCount": "wordNum"
+  },
+  "ruleContent": {
+    "content": "html"
+  },
+  "ruleExplore": {},
+  "ruleSearch": {
+    "author": "$.author",
+    "bookList": "$.data.list[*]",
+    "bookUrl": "$.picture##.*cover/(\\d+/\\d+)\\..*##http://statics.ywpxg.com/static/book/zip/$1.zip,{'type':'zip'}",
+    "coverUrl": "$.picture",
+    "intro": "$.intro",
+    "kind": "$.categoryName",
+    "lastChapter": "{{$.chapterName}}·{{$.chapterUpdateTime}}",
+    "name": "$.name",
+    "wordCount": ""
+  },
+  "ruleToc": {
+    "chapterList": "<js>\nlet path=java.get('path');\nlet content=Packages.java.lang.String(java.readFile(path+'/chapter.json'));\njava.getTxtInFolder(path);//删除路径\nJSON.parse(content).data\n</js>",
+    "chapterName": "name",
+    "chapterUrl": "content_url"
+  },
+  "searchUrl": "/api/v1/novelsearch?content={{key}}&pageIndex=1&pageSize=20&type=1",
+  "weight": 9999
+}]
